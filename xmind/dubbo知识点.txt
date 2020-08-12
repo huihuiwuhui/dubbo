@@ -1,0 +1,18 @@
+spi
+1.jdk spi 缺点 
+1.1需要将所有的接口都加载并实例化
+dubbo spi
+1.基于key=value
+
+
+
+dubbo服务注册到zookeeper过程
+1.前提是基于xml配置文件来说；
+1.1首先dubbo基于spring的xsd特性进行了自定义标签的拓展。
+1.2spring启动的时候就会加载dubbo的自定义标签，并进行解析，解析为spring中的bean
+1.3在解析的过程中会解析一个ServiceBean,这个bean就是用来发布服务的。
+1.3.1这个bean继承了ServiceConfig,服务发布，注册在这里实现
+1.3.2实现了InitializingBean这个接口，实现了很多接口，这里重点讲一下这个接口，这个接口只有一个方法afterPropertiesSet（）
+这个方法将在所有的属性被初始化后调用，这个方法就是服务发布的入口。
+dubbo://169.254.96.123:20880/org.apache.dubbo.demo.DemoService?anyhost=true&application=demo-provider&bean.name=org.apache.dubbo.demo.DemoService&bind.ip=169.254.96.123&bind.port=20880&dubbo=2.0.2&generic=false&interface=org.apache.dubbo.demo.DemoService&methods=sayHello&pid=2548&qos.port=22222&release=&side=provider&timestamp=1587651151927
+
