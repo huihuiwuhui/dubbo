@@ -16,3 +16,9 @@ dubbo服务注册到zookeeper过程
 这个方法将在所有的属性被初始化后调用，这个方法就是服务发布的入口。
 dubbo://169.254.96.123:20880/org.apache.dubbo.demo.DemoService?anyhost=true&application=demo-provider&bean.name=org.apache.dubbo.demo.DemoService&bind.ip=169.254.96.123&bind.port=20880&dubbo=2.0.2&generic=false&interface=org.apache.dubbo.demo.DemoService&methods=sayHello&pid=2548&qos.port=22222&release=&side=provider&timestamp=1587651151927
 
+/usr/local/tools/jdk1.8.0_271
+
+export JAVA_HOME=/usr/local/tools/jdk1.8.0_271
+export JRE_HOME=${JAVA_HOME}/jre  
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+export PATH=${JAVA_HOME}/bin:$PATH
